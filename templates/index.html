@@ -57,19 +57,61 @@
         </div>
         <div class="form-group mb-4">
           <label class="mb-4">Current occupation:</label>
-          <br>
+          <br />
           <div class="btn-group-vertical" id="occupation">
-            <input class="btn-check form-control" type="radio" id="employed" name="occupation"  value="employed" required/>
-            <label class="btn btn-outline-secondary" for="employed">Employed</label>
-            <input class="btn-check form-control" type="radio" id="unemployed" name="occupation" value="unemployed" required />
-            <label class="btn btn-outline-secondary" for="unemployed">Unemployed</label>
-            <input class="btn-check form-control" type="radio" id="self-employed" name="occupation"  value="self-employed" required />
-            <label class="btn btn-outline-secondary" for="self-employed">Self-Employed</label>
-            <input class="btn-check form-control" type="radio" id="student" name="occupation" value="student" required />
-            <label class="btn btn-outline-secondary" for="student">Student</label>
+            <input
+              class="btn-check form-control"
+              type="radio"
+              id="employed"
+              name="occupation"
+              value="employed"
+              required
+            />
+            <label class="btn btn-outline-secondary" for="employed"
+              >Employed</label
+            >
+            <input
+              class="btn-check form-control"
+              type="radio"
+              id="unemployed"
+              name="occupation"
+              value="unemployed"
+              required
+            />
+            <label class="btn btn-outline-secondary" for="unemployed"
+              >Unemployed</label
+            >
+            <input
+              class="btn-check form-control"
+              type="radio"
+              id="self-employed"
+              name="occupation"
+              value="self-employed"
+              required
+            />
+            <label class="btn btn-outline-secondary" for="self-employed"
+              >Self-Employed</label
+            >
+            <input
+              class="btn-check form-control"
+              type="radio"
+              id="student"
+              name="occupation"
+              value="student"
+              required
+            />
+            <label class="btn btn-outline-secondary" for="student"
+              >Student</label
+            >
           </div>
         </div>
         <button class="btn btn-secondary" type="submit">Submit</button>
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %} {% for category, message in messages %}
+        <div class="alert alert-{{ category }} mt-4" role="alert">
+          {{ message }}
+        </div>
+        {% endfor %} {% endif %} {% endwith %}
       </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

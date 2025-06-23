@@ -1,5 +1,5 @@
 from datetime import datetime
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -32,6 +32,7 @@ def index():
         # SQL insert
         db.session.add(form)
         db.session.commit()
+        flash(f"{first_name}, your form was submitted!", "success")
 
     return render_template("index.html")
 
@@ -39,4 +40,4 @@ def index():
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
-app.run(debug=True, port=5001)
+    app.run(debug=True, port=5001)
